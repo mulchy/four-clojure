@@ -1,9 +1,12 @@
 (ns four-clojure.fifty-eight)
 
-(defn my-juxt [& fns]
-  (let [fns (distinct fns)]
-       (fn [& args]
-         (reduce (fn [acc f]
-                   (conj acc (apply f args)))
-                 []
-                 fns))))
+(defn my-comp
+  "compose n functions"
+  ([] identity)
+  ([f] f)
+  ([f g]
+   (fn
+     ([] (f (g)))
+     ([x & args] (f (apply g (list* x args))))))
+  ([f g & more]
+   (reduce comp f (list* g more))))
