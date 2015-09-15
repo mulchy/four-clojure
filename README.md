@@ -1,6 +1,6 @@
 # four-clojure
 
-A place to track 4Clojure progress
+A place to track 4Clojure progress!
 
 ## License
 
