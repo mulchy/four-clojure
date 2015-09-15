@@ -2,6 +2,7 @@
 
 A place to track 4Clojure progress!
 
+![Build status](https://travis-ci.org/mulchy/four-clojure.svg?branch=master)
 ## License
 
 Copyright © 2015 Ryan Mulcahy
