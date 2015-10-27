@@ -13,3 +13,12 @@
 
 (defn collect-anagrams [coll]
   (set (filter #(>= (count %) 2) (impl coll []))))
+
+;; bmaddy's gorgeous solution
+(fn [coll]
+  (->> coll
+       (group-by frequencies)
+       vals
+       (filter #(< 1 (count %)))
+       (map set)
+       set))
